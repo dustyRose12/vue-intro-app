@@ -1,0 +1,29 @@
+<div id="app">
+<div>
+  {{ message }}
+</div>
+<!--   two-way binding:
+ -->  
+ <input v-model="message">
+
+ <h2>Reviews</h2>
+  <div v-for="review in reviews" v-if="isPositive(review.text)" v-on:click="deleteReview(review)">
+    <h4>{{ review.text }}</h4>
+    <h6>{{review.reviewer}} - {{review.rating}} stars</h6>
+</div>
+ <h4>Add a Review</h4>
+ <div>
+ Review: <input v-model="newReviewText">
+ </div>
+ <div>
+ Rating: <input v-model="newReviewRating">
+ </div>
+ <div>
+ Your Name:<input v-model="newReviewReviewer">
+ </div>
+
+ <button v-on:click="addReview()">Add Review</button>
+
+
+
+</div>
